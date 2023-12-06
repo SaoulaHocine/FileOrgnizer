@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="388.0" minWidth="600.0" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myfileorganizerapp.FXMLDocumentController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="86.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/folder%20(2).png" />
+               </image>
+            </ImageView>
+            <Line endX="60.0" fill="#dd4646" rotate="90.0" stroke="#da1d1d" strokeLineCap="ROUND" strokeMiterLimit="0.0" strokeType="OUTSIDE" strokeWidth="2.0" />
+            <ImageView fitHeight="63.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/filesorterAsset%201.png" />
+               </image>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Line endX="436.0" fill="#c7862a" opacity="0.26" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="OUTSIDE">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Line>
+      <TabPane minHeight="290.0" minWidth="600.0" prefHeight="376.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-font-weight: bold;" text="Single Link Organizer">
+               <content>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="600.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="112.0" text="Prefix Folder">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="prifix" focusTraversable="false" prefHeight="25.0" prefWidth="361.0" promptText="Enter folder prefix (e.g., ProjectName)..." style="-fx-background-color: e8e7e3;">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="TOP_CENTER" prefHeight="17.0" prefWidth="54.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="63.0" prefWidth="600.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="120.0" text="Source Folder">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="actPath" focusTraversable="false" prefHeight="30.0" prefWidth="324.0" promptText="Select folder location..." style="-fx-background-color: e8e7e3;">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <JFXButton fx:id="actptn" onAction="#SelectApath" text=" ">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/upload.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="63.0" prefWidth="600.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="120.0" text="To Folder ">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="newPath" focusTraversable="false" prefHeight="30.0" prefWidth="324.0" promptText="Destination folder..." style="-fx-background-color: #e8e7e3;">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <JFXButton fx:id="newbtn" onAction="#SelectApath" text=" ">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/upload.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="63.0" prefWidth="600.0" spacing="140.0">
+                           <children>
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#Cancel" prefHeight="50.0" prefWidth="160.0" text="Clear">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#Orgnize" prefHeight="50.0" prefWidth="160.0" text="Organize">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/folder%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/link%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+          <Tab style="-fx-font-weight: bold;" text="Multi-Link Organizer">
+               <content>
+                  <VBox prefHeight="310.0" prefWidth="600.0" spacing="4.0">
+                     <children>
+                        <TableView fx:id="TableUrl" prefHeight="204.0" prefWidth="590.0">
+                          <columns>
+                            <TableColumn fx:id="IDs" prefWidth="69.0" text="ID" />
+                            <TableColumn fx:id="URL" prefWidth="500.0" text="Links" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" maxWidth="590.0" prefHeight="60.0" prefWidth="590.0" spacing="20.0">
+                           <children>
+                              <TextField fx:id="prifixmulti" promptText="Prifix" />
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#deleteUrl" prefHeight="40.0" prefWidth="135.0" text="Delete Link">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="nurl" focusTraversable="false" graphicTextGap="5.0" onAction="#AddNewUrl" prefHeight="40.0" prefWidth="104.0" text="New">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="590.0" prefHeight="45.0" prefWidth="549.0">
+                           <children>
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#ToTheFolder" prefHeight="40.0" prefWidth="196.0" text="Destination Folder">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/download.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <TextField fx:id="nextDir" prefHeight="30.0" prefWidth="240.0" promptText="Select destination folder or link...">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="12.0" />
+                                 </font></TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="64.0" maxWidth="590.0" prefHeight="64.0" prefWidth="590.0" spacing="193.0">
+                           <children>
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#ClearTable" prefHeight="50.0" prefWidth="161.0" text="Clear">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton focusTraversable="false" graphicTextGap="5.0" onAction="#OrgnizeMultiUrl" prefHeight="40.0" prefWidth="141.0" text="Organize">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/folder%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/multi-level-marketing%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

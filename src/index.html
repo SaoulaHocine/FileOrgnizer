@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="folder-icon">📁</div>
+                <div class="divider"></div>
+                <div class="app-icon">🗂️</div>
+            </div>
+        </div>
+        
+        <div class="separator"></div>
+
+        <!-- Tab Container -->
+        <div class="tab-container">
+            <!-- Tab Navigation -->
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="single">
+                    <span class="tab-icon">🔗</span>
+                    Single Link Organizer
+                </button>
+                <button class="tab-button" data-tab="multi">
+                    <span class="tab-icon">🔗</span>
+                    Multi-Link Organizer
+                </button>
+            </div>
+
+            <!-- Single Link Tab Content -->
+            <div id="single-tab" class="tab-content active">
+                <div class="form-group">
+                    <label for="prefix-single">Prefix Folder</label>
+                    <input type="text" id="prefix-single" placeholder="Enter folder prefix (e.g., ProjectName)...">
+                </div>
+
+                <div class="form-group">
+                    <label for="source-path">Source Folder</label>
+                    <div class="input-group">
+                        <input type="text" id="source-path" placeholder="Select folder location..." readonly>
+                        <button id="select-source" class="icon-button" title="Select Source Folder">📁</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination-path">To Folder</label>
+                    <div class="input-group">
+                        <input type="text" id="destination-path" placeholder="Destination folder..." readonly>
+                        <button id="select-destination" class="icon-button" title="Select Destination Folder">📁</button>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="clear-single" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span>
+                        Clear
+                    </button>
+                    <button id="organize-single" class="btn btn-primary">
+                        <span class="btn-icon">📂</span>
+                        Organize
+                    </button>
+                </div>
+            </div>
+
+            <!-- Multi Link Tab Content -->
+            <div id="multi-tab" class="tab-content">
+                <div class="table-container">
+                    <table id="url-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Links</th>
+                            </tr>
+                        </thead>
+                        <tbody id="url-table-body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="multi-controls">
+                    <input type="text" id="prefix-multi" placeholder="Prefix">
+                    <button id="delete-link" class="btn btn-danger">
+                        <span class="btn-icon">🗑️</span>
+                        Delete Link
+                    </button>
+                    <button id="add-link" class="btn btn-success">
+                        <span class="btn-icon">➕</span>
+                        New
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <button id="select-multi-destination" class="btn btn-info">
+                            <span class="btn-icon">📥</span>
+                            Destination Folder
+                        </button>
+                        <input type="text" id="multi-destination-path" placeholder="Select destination folder or link..." readonly>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="clear-multi" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span>
+                        Clear
+                    </button>
+                    <button id="organize-multi" class="btn btn-primary">
+                        <span class="btn-icon">📂</span>
+                        Organize
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

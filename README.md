@@ -1,95 +1,125 @@
-# Files Sorter
+# File Organizer - Electron Desktop App
 
-The "Files Sorter" is a lightweight desktop application designed to streamline and simplify the organization of files on your computer. This offline tool, built with Java and JavaFX, empowers users to efficiently manage their files and folders with ease.
-![image](https://github.com/SaoulaHocine/FileOrgnizer/assets/59206202/0ddaf50f-c8ad-46c4-9ce1-239794d45141)
+A modern, cross-platform desktop application for organizing files by their extensions. Built with Electron, this app provides an intuitive interface for sorting files from single or multiple source folders into organized destination directories.
 
-## Key Features:
+## Features
 
-1. **Intuitive User Interface:**
-   - Enjoy a user-friendly interface that makes file organization straightforward and accessible.
+### 🗂️ Single Link Organizer
+- Select a source folder containing files to organize
+- Choose a destination folder for organized files
+- Add optional prefix to organized folder names
+- Files are automatically sorted by extension (e.g., `.pdf`, `.jpg`, `.txt`)
 
-2. **Customizable Sorting:**
-   - Tailor the sorting process to your needs, whether by file type, date, or other criteria.
+### 🔗 Multi-Link Organizer
+- Add multiple source folders to organize simultaneously
+- Manage source folders with an easy-to-use table interface
+- Remove unwanted folders from the list
+- Organize files from all selected folders into a single destination
 
-3. **Multi-Tab Functionality:**
-   - Leverage the convenience of multiple tabs for sorting files from different sources simultaneously.
+### ✨ Key Benefits
+- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Modern UI**: Clean, responsive interface with smooth animations
+- **Safe Operations**: Prevents data loss with duplicate file handling
+- **Visual Feedback**: Progress indicators and success/error messages
+- **File Explorer Integration**: Open organized folders directly from the app
 
-4. **Single Link Sorting:**
-   - Effortlessly organize files from a single URL or link using a dedicated tab.
+## Installation
 
-5. **Multi-Link Sorting:**
-   - Combine and organize folders from multiple links efficiently within a dedicated tab.
+### Prerequisites
+- Node.js (version 16 or higher)
+- npm or yarn package manager
 
-6. **Prefix Customization:**
-   - Personalize file names by adding prefixes based on your project or organizational preferences.
+### Setup
+1. Clone or download the project
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-7. **Visual Feedback:**
-   - Receive visual cues and feedback during the sorting process for a seamless user experience.
+### Development
+Run the app in development mode:
+```bash
+npm run dev
+```
 
-## How It Works:
-# Single Link Organizer:
-  ![image](https://github.com/SaoulaHocine/FileOrgnizer/assets/59206202/1ee7bc9f-793c-446f-aab7-1e98b92c3d24)
+### Building
+Create distributable packages:
 
-1. **Write Prefix (Optional):**
-   - Enter a prefix to customize your resulting folders (optional).
+**For Windows:**
+```bash
+npm run build-win
+```
 
-2. **Select Source Folder Link:**
-   - Click the "Select Source Folder" button to open a window for folder selection.
-   - Choose the folder link you want to organize.
+**For macOS:**
+```bash
+npm run build-mac
+```
 
-3. **Select Destination Folder:**
-   - Click the "Select Destination Folder" button to choose where the organized files will be placed.
+**For Linux:**
+```bash
+npm run build-linux
+```
 
-4. **Organize:**
-   - Click the "Organize" button to start the sorting process.
+**For all platforms:**
+```bash
+npm run build
+```
 
+## How It Works
 
+### File Organization Process
+1. **Scan**: The app scans selected source folders for files
+2. **Categorize**: Files are grouped by their extensions
+3. **Create Folders**: Destination folders are created based on file extensions
+4. **Move Files**: Files are safely moved to their corresponding folders
+5. **Report**: Success/error summary is displayed
 
-# Multi-Link Organizer:
-![image](https://github.com/SaoulaHocine/FileOrgnizer/assets/59206202/08d8428d-3fef-4a19-a241-455027651a12)
+### Folder Structure Example
+```
+Destination Folder/
+├── [Prefix]pdf/
+│   ├── document1.pdf
+│   └── report.pdf
+├── [Prefix]jpg/
+│   ├── photo1.jpg
+│   └── image.jpg
+└── [Prefix]txt/
+    ├── notes.txt
+    └── readme.txt
+```
 
-1. **Add New Link:**
-   - Click the "Add New Link" button to open a folder selection window.
-   - Select the folder you want to link and repeat the process for different links.
+## Technology Stack
 
-2. **Remove Unwanted Links:**
-   - If you accidentally select the wrong link, simply choose it and click the "Delete Link" button.
+- **Electron**: Cross-platform desktop app framework
+- **Node.js**: Backend runtime for file operations
+- **HTML/CSS/JavaScript**: Modern web technologies for the UI
+- **IPC (Inter-Process Communication)**: Secure communication between main and renderer processes
 
-3. **Prefix (Optional):**
-   - Choose whether to add a prefix to your resulting folders for better categorization.
+## Security Features
 
-4. **Destination Folder:**
-   - Select the destination folder where you want to organize the files.
+- **Context Isolation**: Renderer process is isolated from Node.js APIs
+- **Preload Scripts**: Secure exposure of necessary APIs to the frontend
+- **No Direct File System Access**: All file operations go through the main process
 
-5. **Organize:**
-   - Click the "Organize" button to initiate the sorting process.
- 
-## Requirements:
+## Contributing
 
-- The application is Java-based, ensuring compatibility across different operating systems.
-- Java and JavaFX libraries are used, providing a robust and responsive user interface.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## Get Started:
+## License
 
-1. Download the "Files Sorter" executable JAR file from the release section.
-2. Run the JAR file on your local machine.
-3. Follow the intuitive prompts to organize your files effortlessly.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contribute:
+## Support
 
-- We welcome contributions! Feel free to fork the repository, make improvements, and submit pull requests.
+If you encounter any issues or have questions:
+1. Check the existing issues in the repository
+2. Create a new issue with detailed information
+3. Include your operating system and Node.js version
 
-## Feedback and Support:
+---
 
-- Have questions or feedback? Reach out to us through the [issue tracker](#issue-tracker-link) or [contact form](#contact-form-link).
-
-## License:
-
-- This project is licensed under the [MIT License](#license-link). See the LICENSE file for more details.
-
-Explore the "Files Sorter" and simplify your file organization experience!
-
-<!-- Screenshots Section -->
-<!-- ![Screenshot 1](screenshots/screenshot1.png) -->
-<!-- ![Screenshot 2](screenshots/screenshot2.png) -->
-<!-- Add more screenshots as needed -->
+**Original JavaFX Version**: This Electron app is a modern web-based conversion of the original JavaFX file organizer application, maintaining all core functionality while providing a more accessible and cross-platform experience.
